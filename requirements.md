@@ -2,24 +2,30 @@
 
 ## Setup
 
-Please install the following recommended tools prior to the workshop.
+Please install the following code and tools prior to the workshop.
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/)
 2. Install the Chrome extension [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview)
-3. Clone the GitHub repository or [download the zip file]() with the lab.
+3. Clone the [GitHub repository](https://github.com/M2D2co/build-for-accessibility-with-angular) or [download the zip file](https://github.com/M2D2co/build-for-accessibility-with-angular/archive/main.zip) with the lab.
 
     ```bash
-    git clone
+    git clone git@github.com:M2D2co/build-for-accessibility-with-angular.git
     cd build-for-accessibility-with-angular
     ```
 
-4. Install dependencies
+4. Checkout the `start` branch
+
+    ```bash
+    git checkout start
+    ```
+
+5. Install dependencies
 
     ```bash
     npm install
     ```
 
-5. Launch project
+6. Launch project
 
     ```bash
     ng serve
