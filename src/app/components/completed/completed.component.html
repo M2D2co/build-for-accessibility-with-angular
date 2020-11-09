@@ -1,0 +1,28 @@
+<mat-card class="completed">
+  <h2>Completed List</h2>
+  <mat-card-content>
+    <mat-list role="list" *ngIf="todoList?.length else empty">
+      <mat-list-item role="listitem" *ngFor="let todo of todoList; let i = index">
+        <div class="item">
+          <span [id]="'item-' + i">{{ todo.item }}</span>
+          <button type="button" mat-icon-button type="button" color="primary" aria-label="undo" [attr.aria-describedby]="'item-' + i" (click)="undo(todo.id)">
+            <mat-icon>undo</mat-icon>
+          </button>
+          <button type="button" mat-icon-button type="button" color="warn" aria-label="delete" [attr.aria-describedby]="'item-' + i" (click)="remove(todo.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #empty>
+  <div class="empty">
+    <img src="/assets/img/completed-no-data.svg" alt="">
+    <p>No completed tasks yet. Check a task in the todo list to mark it as complete.</p>
+  </div>
+</ng-template>

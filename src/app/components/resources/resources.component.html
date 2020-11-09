@@ -1,0 +1,16 @@
+<mat-card>
+  <h2 class="title">Resources</h2>
+  <mat-card-content>
+    <mat-list role="list">
+      <ng-container *ngFor="let cat of resources; let i = index">
+        <h3 matSubheader>{{ cat.categoryName }}</h3>
+        <a mat-list-item [href]="rc.source" rel="noopener" target="_blank" *ngFor="let rc of cat.links" role="listitem">
+          <mat-icon color="accent" matListIcon>link</mat-icon>
+          <span>{{ rc.label }}</span>
+        </a>
+        <mat-divider *ngIf="i < resources?.length - 1"></mat-divider>
+      </ng-container>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+

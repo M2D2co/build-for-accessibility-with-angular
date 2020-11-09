@@ -1,0 +1,13 @@
+@use '../../../assets/scss/theme';
+.app-name {
+  margin: 0;
+}
+.logo {
+  display: inline-block;
+  height: 2ex;
+  vertical-align: top;
+}
+
+@media print {
+  .header { margin-bottom: 2rem; }
+}
