@@ -1,0 +1,9 @@
+@use '../assets/scss/theme';
+
+.app {
+  padding: theme.$default-padding;
+}
+
+@media print {
+  .nav { display: none; }
+}

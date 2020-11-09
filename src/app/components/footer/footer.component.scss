@@ -1,0 +1,30 @@
+@use '../../../assets/scss/theme';
+.footer {
+  margin-top: 2rem;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.links a {
+  padding: theme.$default-padding;
+  &:before {
+    content: url('../../../assets/img/twitter.svg');
+    display: inline-block;
+    width: 3ch;
+    vertical-align: middle;
+  }
+}
+.copyright {
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 400;
+  margin-top: 2ex;
+  padding: theme.$default-padding;
+  border-top: solid 1px theme.$border;
+}
+
+@media print {
+  .links { display: none; }
+}

@@ -1,0 +1,20 @@
+@use '../../../assets/scss/theme';
+.section {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: theme.$small) {
+  .home {
+    display: flex;
+  }
+  .content {
+    flex-basis: 5fr;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-right: 1rem;
+  }
+  .resources {
+    flex-basis: 2fr;
+  }
+
+}

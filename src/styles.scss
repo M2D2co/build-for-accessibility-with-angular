@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@use './assets/scss/theme';
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: theme.$background;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 955px;
+}
+
+.empty {
+  img {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin: 4ex auto;
+  }
+  p {
+    text-align: center;
+    max-width: 26ch;
+    margin: 2ex auto;
+  }
+}
+
+@media screen and (min-width: theme.$small) {
+  .empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img { margin: 4ex 2ch }
+    p { margin: 4ex 0 }
+  }
+}
