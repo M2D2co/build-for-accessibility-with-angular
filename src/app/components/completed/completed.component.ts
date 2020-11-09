@@ -13,15 +13,21 @@ export class CompletedComponent implements OnInit, OnDestroy {
 
   destroyed$: Subject<boolean> = new Subject();
   todoList: Todo[];
+  loaded = false;
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
     this.todoService.todos$.pipe(
       takeUntil(this.destroyed$),
-      map((todos: Todo[]) => todos.filter(todo => todo.completed))
+      map((todos: Todo[]) => {
+        if (!todos) { return todos; }
+        return todos.filter(todo => todo.completed);
+      })
       ).subscribe(todos => {
-      this.todoList = todos;
+        if (!todos) { return; }
+        this.todoList = todos;
+        this.loaded = true;
     });
   }
 

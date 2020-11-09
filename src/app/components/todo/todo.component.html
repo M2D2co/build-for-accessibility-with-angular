@@ -1,6 +1,6 @@
 <mat-card>
   <h2>To Do List</h2>
-  <mat-card-content>
+  <mat-card-content *ngIf="loaded else loading" aria-live="polite">
     <mat-selection-list aria-label="todos" (selectionChange)="onSelectionChange($event)" *ngIf="todoList?.length else empty">
       <mat-list-option [value]="todo.id" *ngFor="let todo of todoList">
         {{ todo.item }}
@@ -25,4 +25,11 @@
     <img src="/assets/img/todo-no-data.svg" alt="">
     <p>No tasks yet. User the form below to create your first to do item.</p>
   </div>
+</ng-template>
+
+<ng-template #loading>
+  <mat-card-content class="loading">
+    <mat-spinner></mat-spinner>
+    <p>Loading...</p>
+  </mat-card-content>
 </ng-template>

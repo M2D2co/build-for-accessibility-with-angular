@@ -56,13 +56,24 @@ describe('TodoComponent', () => {
     expect(component.todoList.length).toEqual(todos.length);
   });
 
-  it('should so empty screen when no to dos', async () => {
+  it('should show empty screen when no to dos', async () => {
     mockTodoService.extend({ todos$: of([]) });
     component.ngOnInit();
     await fixture.whenStable();
     fixture.detectChanges();
     const empty = fixture.debugElement.nativeElement.querySelector('div.empty');
     expect(empty).toBeTruthy();
+  });
+
+  it('should show loading screen while loading', async () => {
+    component.loaded = false;
+    component.todoList = null;
+    mockTodoService.extend({ todos$: of(null) });
+    component.ngOnInit();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const loading = fixture.debugElement.nativeElement.querySelector('.loading');
+    expect(loading).toBeTruthy();
   });
 
   it('should include an add to list form', () => {

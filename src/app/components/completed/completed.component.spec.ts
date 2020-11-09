@@ -86,12 +86,24 @@ describe('CompletedComponent', () => {
     expect(missingRoles).toBeFalsy();
   });
 
-  it('should so empty screen when no completed to dos', async () => {
+  it('should showo empty screen when no completed to dos', async () => {
     mockTodoService.extend({ todos$: of([]) });
     component.ngOnInit();
     await fixture.whenStable();
     fixture.detectChanges();
     const empty = fixture.debugElement.nativeElement.querySelector('div.empty');
     expect(empty).toBeTruthy();
+  });
+
+  it('should show loading screen while loading', async () => {
+    component.loaded = false;
+    component.todoList = null;
+    mockTodoService.extend({ todos$: of(null) });
+    component.ngOnInit();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    console.log(component.todoList);
+    const loading = fixture.debugElement.nativeElement.querySelector('mat-card-content.loading');
+    expect(loading).toBeTruthy();
   });
 });
