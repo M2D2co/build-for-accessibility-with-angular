@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Todo } from '../../models/todo.model';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Todo } from '../../models/todo.model';
 export class TodoService {
 
   db: IDBDatabase;
-  private todos: Subject<Todo[]> = new Subject();
+  private todos: BehaviorSubject<Todo[]> = new BehaviorSubject(null);
   todos$: Observable<Todo[]> = this.todos.asObservable();
 
   constructor() {

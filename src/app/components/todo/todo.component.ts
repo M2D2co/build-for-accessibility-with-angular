@@ -16,6 +16,7 @@ export class TodoComponent implements OnInit, OnDestroy {
   destroyed$: Subject<boolean> = new Subject();
   todoList: Todo[];
   form: FormGroup;
+  loaded = false;
 
   constructor(
     private todoService: TodoService,
@@ -27,17 +28,23 @@ export class TodoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    console.log('init');
     this.todoService.todos$.pipe(
       takeUntil(this.destroyed$),
-      map((todos: Todo[]) => todos.filter(todo => !todo.completed))
-      ).subscribe(todos => {
-      this.todoList = todos;
+      map((todos: Todo[]) => {
+        if (!todos) { return todos; }
+        return todos.filter(todo => !todo.completed);
+      })).subscribe(todos => {
+        if (!todos) { return; }
+        this.todoList = todos;
+        this.loaded = true;
     });
   }
 
-  add(): void {
+  async add(): Promise<void> {
     const item = this.form.value.item;
-    this.todoService.create(item);
+    await this.todoService.create(item);
+    this.form.reset();
   }
 
   onSelectionChange(event: MatSelectionListChange): void {
@@ -47,6 +54,7 @@ export class TodoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    console.log('destroyed');
     this.destroyed$.next(true);
     this.destroyed$.complete();
   }

@@ -29,6 +29,11 @@ body {
   }
 }
 
+.loading {
+  text-align: center;
+  .mat-spinner { margin: 2ex auto; }
+}
+
 @media screen and (min-width: theme.$small) {
   .empty {
     display: flex;

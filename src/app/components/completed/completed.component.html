@@ -1,6 +1,6 @@
 <mat-card class="completed">
   <h2>Completed List</h2>
-  <mat-card-content>
+  <mat-card-content *ngIf="loaded else loading">
     <mat-list role="list" *ngIf="todoList?.length else empty">
       <mat-list-item role="listitem" *ngFor="let todo of todoList; let i = index">
         <div class="item">
@@ -25,4 +25,11 @@
     <img src="/assets/img/completed-no-data.svg" alt="">
     <p>No completed tasks yet. Check a task in the todo list to mark it as complete.</p>
   </div>
+</ng-template>
+
+<ng-template #loading>
+  <mat-card-content class="loading">
+    <mat-spinner></mat-spinner>
+    <p>Loading...</p>
+  </mat-card-content>
 </ng-template>
