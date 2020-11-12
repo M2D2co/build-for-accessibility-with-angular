@@ -36,7 +36,10 @@ export class ResourcesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onNavigate(url: string): void {
+    window.open(url, '_blank');
   }
 
 }
