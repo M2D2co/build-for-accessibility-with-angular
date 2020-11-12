@@ -1,7 +1,25 @@
+@use "sass:map";
+
 @use '../assets/scss/theme';
 
 .app {
   padding: theme.$default-padding;
+}
+
+a {
+  position: fixed;
+  display: inline-block;
+  background: map.get(theme.$customGreen, 400);
+  color: map.get( map.get(theme.$customGreen, contrast), 400);
+  padding: theme.$default-padding;
+  transform: scaleX(0);
+  margin: 1rem 0;
+  left: 1rem;
+  transition: transform 250ms ease-in-out;
+  transform-origin: left center;
+  &:hover, &:focus {
+    transform: scaleX(1);
+  }
 }
 
 @media print {
