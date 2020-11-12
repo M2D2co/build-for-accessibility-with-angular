@@ -1,6 +1,14 @@
 # BuildForAccessibilityWithAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3 and includes Angular Material. Styles use Sass (scss syntax).
+The project has 2 main branches:
+
+* `main`: WCAG compliant version of the application
+* `start`: Purposely non compliant version used to teach the "Accessibility in Angular" workshop.
+
+**If you are attending the worshop please [follow the setup instructions](https://github.com/M2D2co/build-for-accessibility-with-angular/blob/main/requirements.md) ahead of time. Thank you.**
+
+
 
 ## Development server
 
