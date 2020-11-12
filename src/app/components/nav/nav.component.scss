@@ -1,7 +1,5 @@
 @use '../../../assets/scss/theme';
-.nav {
-  margin-bottom: 1rem;
-}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -13,5 +11,8 @@ a {
   align-items: center;
   padding: theme.$default-padding;
   .mat-icon { margin-right: .25ch; }
+}
+a:hover, a:focus {
+  outline-offset: -.5em;
 }
 

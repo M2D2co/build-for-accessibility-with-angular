@@ -8,6 +8,10 @@
   vertical-align: top;
 }
 
+.header {
+  padding: 2ex 2ch 0;
+}
+
 @media print {
   .header { margin-bottom: 2rem; }
 }
