@@ -8,6 +8,7 @@ The project has 2 main branches:
 
 **If you are attending the worshop please [follow the setup instructions](https://github.com/M2D2co/build-for-accessibility-with-angular/blob/main/requirements.md) ahead of time. Thank you.**
 
+A demo of the compliant site can be found at https://m2d2co.github.io/build-for-accessibility-with-angular/
 
 
 ## Development server
