@@ -130,7 +130,7 @@ a:link, a:visited, .mat-list-base a.mat-list-item {
   line-height: 1.5;
   font-weight: 600;
   mat-icon {
-    color: map.get($customGreen, 400);
+    color: map.get($customGreen, 600);
   }
 }
 a:hover {
