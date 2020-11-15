@@ -117,7 +117,7 @@ $custom-theme: mat-light-theme((
 $custom-typography: mat-typography-config(
   $font-family: 'Source Sans Pro, sans-serif'
 );
-@include mat-core($custom-typography);
+@include angular-material-typography($custom-typography);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
