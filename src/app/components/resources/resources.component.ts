@@ -17,7 +17,7 @@ export class ResourcesComponent implements OnInit {
     { categoryName: 'Development Environment',
       links: [
         { source: 'https://stylelint.io/', label: 'stylelint' },
-        { source: 'typescript-eslint.io', label: 'TypeScript EsLint' },
+        { source: 'https://typescript-eslint.io', label: 'TypeScript EsLint' },
         { source: 'https://github.com/htmlhint/HTMLHint', label: 'HTMLHint' }
     ]},
     { categoryName: 'Validators',
@@ -26,7 +26,7 @@ export class ResourcesComponent implements OnInit {
         { source: 'https://validator.w3.org/', label: 'W3C Markup Validation Serivce' },
     ]},
     { categoryName: 'Visualization', links: [
-      { source: 'http://khan.github.io/tota11y/', label: 'Tota11y' },
+      { source: 'https://khan.github.io/tota11y/', label: 'Tota11y' },
       { source: 'https://wave.webaim.org/extension/', label: 'Wave' },
     ]},
     { categoryName: 'Other', links: [
