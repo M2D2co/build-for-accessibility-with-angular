@@ -12,4 +12,6 @@ a {
   padding: theme.$default-padding;
   .mat-icon { margin-right: .25ch; }
 }
-
+li > mat-icon {
+  margin: theme.$default-padding;
+}
