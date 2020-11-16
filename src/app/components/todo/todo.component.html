@@ -10,6 +10,7 @@
     <form [formGroup]="form" (submit)="add()">
       <mat-form-field>
         <input required matInput type="text" formControlName="item">
+        <mat-error>Please add the to do item to be added to the list</mat-error>
       </mat-form-field>
       <button mat-icon-button type="submit" [disabled]="form.invalid">
         <mat-icon>add</mat-icon>
