@@ -1,19 +1,28 @@
-<div class="nav">
+<nav class="nav">
   <ul>
     <li>
-      <mat-icon [routerLink]="['']" routerLinkActive="router-link-active">home</mat-icon>
+      <a [routerLink]="['']" routerLinkActive="router-link-active">
+        <mat-icon>home</mat-icon>
+        Home
+    </a>
     </li>
     <li>
-      <mat-icon [routerLink]="['todo']" routerLinkActive="router-link-active">list</mat-icon>
+      <a [routerLink]="['todo']" routerLinkActive="router-link-active">
+        <mat-icon>list</mat-icon>
+        To Do List
+      </a>
     </li>
     <li>
-      <mat-icon [routerLink]="['completed']" routerLinkActive="router-link-active">done</mat-icon>
+      <a [routerLink]="['completed']" routerLinkActive="router-link-active">
+        <mat-icon>done</mat-icon>
+        Completed To Dos
+      </a>
     </li>
     <li>
-      <mat-icon [routerLink]="['resources']" routerLinkActive="router-link-active">help</mat-icon>
-    </li>
-    <li [routerLink]="['a11y']" routerLinkActive="router-link-active">
-      <mat-icon>accessibility</mat-icon>
+      <a [routerLink]="['a11y']" routerLinkActive="router-link-active">
+        <mat-icon>accessibility</mat-icon>
+        Accessibility Statement
+      </a>
     </li>
   </ul>
-</div>
+</nav>

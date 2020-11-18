@@ -1,7 +1,7 @@
 <mat-card>
-  <div class="mat-title">To Do List</div>
+  <h2 class="mat-title" id="title">To Do List</h2>
   <mat-card-content *ngIf="loaded else loading">
-    <mat-selection-list (selectionChange)="onSelectionChange($event)" *ngIf="todoList?.length else empty">
+    <mat-selection-list (selectionChange)="onSelectionChange($event)" *ngIf="todoList?.length else empty" aria-labelledby="title">
       <mat-list-option [value]="todo.id" *ngFor="let todo of todoList">
         {{ todo.item }}
       </mat-list-option>
@@ -9,9 +9,10 @@
 
     <form [formGroup]="form" (submit)="add()">
       <mat-form-field>
+        <mat-label>To do:</mat-label>
         <input required matInput type="text" formControlName="item">
       </mat-form-field>
-      <button mat-icon-button type="submit" [disabled]="form.invalid">
+      <button mat-icon-button type="submit" [disabled]="form.invalid" aria-label="add to do item">
         <mat-icon>add</mat-icon>
       </button>
     </form>

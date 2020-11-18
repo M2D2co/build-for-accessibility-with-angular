@@ -1,16 +1,17 @@
 <mat-card>
-  <div class="mat-title title">Resources</div>
+  <h2 class="mat-title title">Resources</h2>
   <mat-card-content>
-    <mat-action-list>
-      <ng-container *ngFor="let cat of resources; let i = index">
-        <div matSubheader>{{ cat.categoryName }}</div>
-        <button mat-list-item *ngFor="let rc of cat.links" (click)="onNavigate(rc.source)">
-          <mat-icon color="accent" matListIcon>link</mat-icon>
-          <span>{{ rc.label }}</span>
-        </button>
-        <mat-divider *ngIf="i < resources?.length - 1"></mat-divider>
-      </ng-container>
-    </mat-action-list>
+    <section class="list" *ngFor="let cat of resources; let i = index">
+      <h3 matSubheader>{{ cat.categoryName }}</h3>
+      <mat-action-list role="list">
+        <mat-list-item role="listitem" *ngFor="let rc of cat.links">
+          <a [href]="rc.source" target="_blank" rel="noopener">
+            <mat-icon color="accent" matListIcon>link</mat-icon>
+            <span>{{ rc.label }}</span>
+          </a>
+        </mat-list-item>
+      </mat-action-list>
+      <mat-divider *ngIf="i < resources?.length - 1"></mat-divider>
+    </section>
   </mat-card-content>
 </mat-card>
-
