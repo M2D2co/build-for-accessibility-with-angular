@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ResourcesComponent implements OnInit {
 
   resources = [
-    { categoryName: 'Conformace Testing',
+    { categoryName: 'Conformance Testing',
       links: [
         { source: 'https://accessibilityinsights.io/docs/en/web/overview', label: 'Accessibility Insights for Web' },
         { source: 'https://www.deque.com/axe/', label: 'Axe' },

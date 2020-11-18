@@ -72,3 +72,9 @@ a:link, a:visited, .mat-list-base a.mat-list-item {
   }
 }
 
+a:hover, a:focus {
+  outline: 1px dotted #666666;
+}
+.mat-list a:hover {
+  outline: none;
+}
