@@ -4,75 +4,75 @@ $dark-primary-text: #303051;
 $light-primary-text: #fbfbfc;
 
 $customPurple: (
-    50 : #fafaff,
-    100 : #ceced9,
-    200 : #aeaec0,
-    300 : #9B9BB0,
-    400 : #6F6F90,
-    500 : #5d5d81,
-    600 : #555579,
-    700 : #4b4b6e,
-    800 : #414164,
-    900 : #303051,
-    A100 : #B5B5CF,
-    A200 : #A0A0D9,
-    A400 : #9595EA,
-    A700 : #7777f7,
-    contrast: (
-        50 :$dark-primary-text,
-        100 : $dark-primary-text,
-        200 : $dark-primary-text,
-        300 : $dark-primary-text,
-        400 : $light-primary-text,
-        500 : $light-primary-text,
-        600 : $light-primary-text,
-        700 : $light-primary-text,
-        800 : $light-primary-text,
-        900 : $light-primary-text,
-        A100 : $dark-primary-text,
-        A200 : $dark-primary-text,
-        A400 : $dark-primary-text,
-        A700 : $light-primary-text,
-    )
+  50: #fafaff,
+  100: #ceced9,
+  200: #aeaec0,
+  300: #9b9bb0,
+  400: #6f6f90,
+  500: #5d5d81,
+  600: #555579,
+  700: #4b4b6e,
+  800: #414164,
+  900: #303051,
+  A100: #b5b5cf,
+  A200: #a0a0d9,
+  A400: #9595ea,
+  A700: #7777f7,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  ),
 );
 
 $customGreen: (
-    50 : #EDEFE8,
-    100 : #E1EFD4,
-    200 : #D6E6BB,
-    300 : #C4D7A0,
-    400 : #A4C16F,
-    500 : #8BA45B,
-    600 : #607735,
-    700 : #435620,
-    800 : #384320,
-    900 : #263312,
-    A100 : #E3FCB4,
-    A200 : #B5E45B,
-    A400 : #8DCC17,
-    A700 : #527E01,
-    contrast: (
-        50 :$dark-primary-text,
-        100 : $dark-primary-text,
-        200 : $dark-primary-text,
-        300 : $dark-primary-text,
-        400 : $light-primary-text,
-        500 : $light-primary-text,
-        600 : $light-primary-text,
-        700 : $light-primary-text,
-        800 : $light-primary-text,
-        900 : $light-primary-text,
-        A100 : $dark-primary-text,
-        A200 : $dark-primary-text,
-        A400 : $dark-primary-text,
-        A700 : $light-primary-text,
-    )
+  50: #edefe8,
+  100: #e1efd4,
+  200: #d6e6bb,
+  300: #c4d7a0,
+  400: #a4c16f,
+  500: #8ba45b,
+  600: #607735,
+  700: #435620,
+  800: #384320,
+  900: #263312,
+  A100: #e3fcb4,
+  A200: #b5e45b,
+  A400: #8dcc17,
+  A700: #527e01,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  ),
 );
 
-$primary: #5D5D81;
-$primary2:rgb(246, 246, 255);
+$primary: #5d5d81;
+$primary2: rgb(246, 246, 255);
 $accent: map.get($customGreen, 600);
-$accent2: #C9D5B5;
+$accent2: #c9d5b5;
 $text: #000505;
 $grey: #898796;
 $background: map.get($customPurple, 50);
@@ -85,46 +85,50 @@ $small: 650px;
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@use "~@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$custom-primary: mat-palette($customPurple);
-$custom-accent: mat-palette($customGreen, 600, 300, 800);
+$custom-primary: mat.define-palette($customPurple);
+$custom-accent: mat.define-palette($customGreen, 600, 300, 800);
 
 // The warn palette is optional (defaults to red).
-$custom-warn: mat-palette($mat-red);
+$custom-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$custom-theme: mat-light-theme((
-  color: (
-    primary: $custom-primary,
-    accent: $custom-accent,
-    warn: $custom-warn,
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+      warn: $custom-warn,
+    ),
   )
-));
+);
 
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
-$custom-typography: mat-typography-config(
-  $font-family: 'Source Sans Pro, sans-serif'
+$custom-typography: mat.define-typography-config(
+  $font-family: "Source Sans Pro, sans-serif",
 );
-@include angular-material-typography($custom-typography);
+@include mat.all-component-typographies($custom-typography);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($custom-theme);
+@include mat.all-component-themes($custom-theme);
 
-a:link, a:visited, .mat-list-base a.mat-list-item {
+a:link,
+a:visited,
+.mat-list-base a.mat-list-item {
   color: map.get($customPurple, 400);
   text-decoration: none;
   line-height: 1.5;
@@ -136,6 +140,7 @@ a:link, a:visited, .mat-list-base a.mat-list-item {
 a:hover {
   outline: dotted 1px map.get($customPurple, 500);
 }
-a:focus, .mat-list-base a.mat-list-item:focus {
+a:focus,
+.mat-list-base a.mat-list-item:focus {
   outline: solid 2px map.get($customPurple, 300);
 }
