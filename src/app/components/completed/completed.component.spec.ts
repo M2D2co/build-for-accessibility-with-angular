@@ -1,4 +1,4 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Mock } from 'ts-mocks';
 import { TodoService } from '../../services/todo/todo.service';
@@ -14,7 +14,7 @@ describe('CompletedComponent', () => {
 
   let mockTodoService: Mock<TodoService>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     mockTodoService = new Mock<TodoService>({
       todos$: of(allTodos),
       remove: () => ('removed' as any),

@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 import { MaterialModule } from '../../material/material.module';
@@ -16,7 +16,7 @@ describe('TodoComponent', () => {
 
   let mockTodoService: Mock<TodoService>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     mockTodoService = new Mock<TodoService>({
       todos$: of(allTodos),
       updateStatus: () => ('statusUpdated' as any),
