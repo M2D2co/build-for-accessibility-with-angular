@@ -12,7 +12,6 @@ a {
   padding: theme.$default-padding;
   .mat-icon { margin-right: .25ch; }
 }
-a:hover, a:focus {
-  outline-offset: -.5em;
+li > mat-icon {
+  margin: theme.$default-padding;
 }
-
