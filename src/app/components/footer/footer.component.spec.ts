@@ -35,6 +35,6 @@ describe('FooterComponent', () => {
 
   it('should include copyright', () => {
     const copyright = fixture.debugElement.nativeElement.querySelector('div.copyright');
-    expect(copyright.innerText).toEqual('Copyright © 2020 M2D2 Enterprises');
+    expect(copyright.innerText).toEqual('Copyright © 2020-22 M2D2 Enterprises');
   });
 });
