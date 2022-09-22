@@ -1,7 +1,7 @@
 <mat-card>
-  <h2>To Do List</h2>
-  <mat-card-content *ngIf="loaded else loading" aria-live="polite">
-    <mat-selection-list aria-label="todos" (selectionChange)="onSelectionChange($event)" *ngIf="todoList?.length else empty">
+  <div class="mat-title">To Do List</div>
+  <mat-card-content *ngIf="loaded else loading">
+    <mat-selection-list (selectionChange)="onSelectionChange($event)" *ngIf="todoList?.length else empty">
       <mat-list-option [value]="todo.id" *ngFor="let todo of todoList">
         {{ todo.item }}
       </mat-list-option>
@@ -9,11 +9,9 @@
 
     <form [formGroup]="form" (submit)="add()">
       <mat-form-field>
-        <mat-label>To do Item</mat-label>
         <input required matInput type="text" formControlName="item">
-        <mat-error>Please add the to do item to be added to the list</mat-error>
       </mat-form-field>
-      <button mat-icon-button type="submit" aria-label="add" [disabled]="form.invalid">
+      <button mat-icon-button type="submit" [disabled]="form.invalid">
         <mat-icon>add</mat-icon>
       </button>
     </form>
@@ -23,7 +21,7 @@
 
 <ng-template #empty>
   <div class="empty">
-    <img src="assets/img/todo-no-data.svg" alt="">
+    <img src="assets/img/todo-no-data.svg">
     <p>No tasks yet. User the form below to create your first to do item.</p>
   </div>
 </ng-template>
