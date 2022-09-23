@@ -126,6 +126,8 @@ $custom-typography: mat.define-typography-config(
 // that you are using.
 @include mat.all-component-themes($custom-theme);
 
+//  Other
+
 a:link,
 a:visited,
 .mat-list-base a.mat-list-item {

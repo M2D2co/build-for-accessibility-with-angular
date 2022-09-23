@@ -1,5 +1,68 @@
 @use './assets/scss/theme';
 
+//  Fonts
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(assets/fonts/material-icons/MaterialIcons-Regular.ttf) format('opentype');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro'),
+       url(assets/fonts/Source_Sans_Pro/SourceSansPro-Light.ttf) format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'),
+       url(assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf) format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro'),
+       url(assets/fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf) format('opentype');
+  font-display: swap;
+}
+
+.material-icons {
+ font-family: 'Material Icons';
+ font-weight: normal;
+ font-style: normal;
+ font-size: 24px;  /* Preferred icon size */
+ display: inline-block;
+ line-height: 1;
+ text-transform: none;
+ letter-spacing: normal;
+ word-wrap: normal;
+ white-space: nowrap;
+ direction: ltr;
+
+ /* Support for all WebKit browsers. */
+ -webkit-font-smoothing: antialiased;
+ /* Support for Safari and Chrome. */
+ text-rendering: optimizeLegibility;
+
+ /* Support for Firefox. */
+ -moz-osx-font-smoothing: grayscale;
+}
+
+//  Styles
+
 * { box-sizing: border-box; }
 
 html, body {
