@@ -13,9 +13,9 @@
 $dark-primary-text: #303051;
 $light-primary-text: #fbfbfc;
 
-$customPurple: mat.define-palette($mat-deep-purple);
+$customPurple: mat.define-palette(mat.$purple-palette);
 
-$customGreen: mat.define-palette($mat-light-green);
+$customGreen: mat.define-palette(mat.$lime-palette);
 
 $primary: #5d5d81;
 $primary2: rgb(246, 246, 255);
